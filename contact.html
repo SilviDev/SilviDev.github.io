@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Silvia Anaya. 10/01 -->
+    <head>
+        <title>Contact page</title>
+        <meta name="description" content="Contact page">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+
+        <style>
+             body{
+                background-color: #ddd6fe;
+                width: 80%;
+                min-width: 850px;
+                margin: auto;
+                font-family: 'Lato', sans-serif;
+            }
+
+            #content{
+                display: flex;
+                flex-direction: row;
+            }
+
+            header{
+                padding-top: 30px;
+                text-align: center;
+
+            }
+
+            #leftcolumn ul li{
+                list-style-type:none;
+                width:100px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                background-color: white;
+                border-radius: 12px;
+                margin-bottom: 5px;
+
+            }
+
+            a:link{
+                text-decoration: underline;
+                color:black;
+                font-weight: bold;
+            }
+            a:visited{
+                text-decoration: none;
+                color:black;
+            }
+            a:hover{
+                text-decoration: underline;
+                color: #a78bfa;
+
+
+            }
+            a:active{
+                color:black;
+            }
+
+            form {
+
+                background: #ede9fe;
+                border: 3px solid white;
+                border-radius: 10px;
+                margin-top: 2rem;
+                width: 450px;
+                max-width: 600px;
+                margin-left: 100px;
+                margin-right: auto;
+                padding: 1em;
+            }
+            
+            form input {
+                margin-bottom: 1rem;
+                background: white;
+                border: 1px solid white;
+            }
+
+            label {
+                font-weight: bold;
+                display: block;
+                padding-left: 30px;
+                padding-top: 10px;
+            }
+
+            .myinput {
+                width: 400px;
+                padding: 0.6em;
+                margin-bottom: 0.5rem;
+                margin-left: 17px;
+            }
+
+            input[type="submit"]{
+                    background: white;
+                    border-radius: 10px;
+                    border: 3px solid #FEF3C7;
+                    font-weight: bold;
+                    padding: 0.7em;
+                    margin-left: 190px;
+            }
+
+            textarea{
+                background: white;
+                width: 400px;
+                border-radius: 10px;
+                border: white;
+                padding: 0.7em;
+                margin-left: 17px;
+            }
+            
+            footer{
+                text-align: center;
+                padding-top: 40px;
+                padding-bottom: 100px;
+                
+            }
+
+
+        </style>
+</head>
+<body>
+    <header>
+       <h1 style="color: #6b7280;">SEND ME A MESSAGE!</h1> 
+    </header>
+<div id="content">
+    <div id="leftcolumn">
+        <ul>
+            <li><a href="homework1.html">Home</a></li>
+            <li><a href="assigments.html">Assigments</a></li>
+            <li><a href="meetup.html">MeetUp</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          
+        </ul>
+    </div>
+<div id="rightcolumn">
+<p style="padding-left: 30px; text-align: center;">
+    If you want to connect and know more about my work and my interests you can use the information in the footer of the page 
+    or fill out the following form and I will contact you!
+</p>
+<form class="form2" action="#" method="post">
+<label for="fullname">Full Name</label><br>
+<input class="myinput" type="text" name="fullname" id="fullname" required  /> <br>
+<label for="myemail">Email</label><br>
+<input class="myinput" type="email" name="myemail" id="myemail" required/><br><br>
+<textarea name="comments" rows="10" cols="30" placeholder="Let me a Comment"></textarea>
+  <br><br>
+  <input type="submit">
+</form>
+
+</div>
+</div>
+
+
+
+    <footer>Silvia J Anaya <br> <a href="mailto:sanaya2@mail.ccsf.edu">sanaya2@mail.ccsf.edu</a> <br>Copyright &copy; 2020</footer>
+ 
+</body>
+
+</html>

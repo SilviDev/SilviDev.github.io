@@ -1,0 +1,55 @@
+
+body { background-color:yellow; }
+a:link { color:red;}
+a:visited {color:blue;}
+h1 { text-align: center; color:red;}
+.uppercase { font-size: 40pt; font-style: italic;}
+h2 { text-align:right; font-style:italic; color:blue;}
+h3 { text-align:right; color:red;}
+table, tr, td { border-spacing:5px; }
+td { padding: 10px;}
+
+
+
+@keyframes tableBack
+{
+    0% {background: cyan;}
+    100% {background:green;}
+
+    from{color: black;}
+    to{color:white;}
+}
+#table
+{
+    animation: tableBack 5s;
+    background:green;
+    color:white;
+    width:62%;
+    min-width:484px;
+}
+
+@keyframes banner
+{
+    0%  { background: pink; left:0; top:0;}
+    25% { background: lightgoldenrodyellow; left: calc(100% - 100px); top:0;}
+    50% { background: lightgreen; left:0; top: 0;}
+    75% { background: lightsalmon; left: calc(100% - 100px); top:0;}
+    100%{ background: pink; left:0; top:0;}
+
+}
+
+#banner
+{
+    animation-name: banner;
+    background: pink;
+    width: 100px;
+    height: 30px;
+    position: relative;
+
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-duration:18s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+
+}
