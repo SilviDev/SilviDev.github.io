@@ -1,0 +1,185 @@
+<!DOCTYPE hmtl>
+<html lang="en">
+<head>
+    <title>CNIT 133 Homework 2 - Basic Operations</title>
+    <meta name="description" content="Use javaScript to build 3 different scripts">
+    <meta charset="utf-8">
+
+
+    <style>
+        body{
+            background-color:#F0DBD6;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 100px;
+        }
+        h1{
+            text-align: center;
+            color: #6F7EE4;
+        }
+
+        a:link{
+            color: #52183A;
+            font-weight: bold;
+        }
+
+        a:visited{
+            
+            color: #D5387D;
+        }
+
+        #left-column ul li{
+            list-style-type: none;
+            width:150px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.301);
+            border-radius: 12px;
+            margin-bottom: 5px;
+
+        }
+
+        #content {
+            display:flex;
+            flex-direction: row;
+        }
+
+        #right-column{
+            padding-left: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid rgb(150, 149, 149);
+            padding: 4px;
+        }
+        
+        #rate, #dollars, #value1, #value2, #value3, #value4, #value5{
+          text-align: right;  
+        }
+        #currencyType{
+            text-align: center;
+        }
+        #instructions {
+            display: none;
+        }
+    </style>
+
+ 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script> 
+    $(document).ready(function(){
+        $("#flip").click(function(){
+            $("#instructions").slideToggle("slow");
+        });
+    });
+
+    </script>
+
+    <script>
+        function exchange(){
+
+            var euro;
+            var canadiandollar;
+            var hongkong;
+            var yen;
+            var pesos; 
+
+            euro = ((parseFloat(document.forms["currency"].elements["dollars"].value)) * 0.89).toFixed(2);
+
+            canadiandollar = ((parseFloat(document.forms["currency"].elements["dollars"].value)) * 1.31).toFixed(2);
+
+            hongkong = ((parseFloat(document.forms["currency"].elements["dollars"].value)) * 7.80).toFixed(2);
+
+            yen = ((parseFloat(document.forms["currency"].elements["dollars"].value)) * 108.38).toFixed(2);
+
+            pesos = ((parseFloat(document.forms["currency"].elements["dollars"].value)) * 19.11).toFixed(2);
+            
+            document.getElementById("value1").value = (euro);
+            document.getElementById("value2").value = (canadiandollar);
+            document.getElementById("value3").value = (hongkong);
+            document.getElementById("value4").value = (yen);
+            document.getElementById("value5").value = (pesos);
+        }
+    </script>
+
+
+</head>
+<body>
+  <header>  <h1>CNIT 133 Homework 2 - Basic Operations</h1></header>
+  <div id="content">
+  <div id="left-column">
+        <ul>
+            <li><a href="hmw2.html"> Hmw Home</a></li>
+            <li><a href="hmw2-part1.html">Part 1</a> </li>
+            <li><a href="hmw2-part2.html">Part 2</a> </li>
+            <li><a href="hmw2-part3.html">Part 3</a> </li>
+            <li><a href="hmw2-credit.html">Extra Credit</a></li>
+           
+        </ul>
+    </div>
+    <div id="right-column">
+        <h3>Extra Credit:</h3> 
+       <div id="flip">Click to Show/Hide Instructions</div>
+       <div id="instructions">
+        The foreign exchange rates in July 2019 are Euro $0.89, Canadian Dollar $1.31, Hong Kong Dollar $7.80, Japanese Yen	$108.38,
+        Mexican Peso $19.11. <br> Enter a dollar amount in the table below to see the corresponding foreign exchange values.
+       </div>
+       <form name="currency">
+       <table>
+           <tr>
+               <th colspan="3">Monetary Exchange Rates</th>
+           </tr>
+           <tr>
+               <th>Currency</th>
+               <th>Rate</th>
+               <th>Value</th>
+           </tr>
+           <tr>
+               <td id= "currencyType">Euro</td>
+               <td id="rate" disabled=""> 0.89</td>
+               <td><input id="value1" size="10" readonly></td>
+           </tr>
+           <tr>
+            <td id= "currencyType">Canadian Dolla</td>
+            <td id="rate" disabled=""> 1.31</td>
+            <td><input id="value2" size="10" readonly></td>
+        </tr>
+        <tr>
+            <td id= "currencyType">Hong Kong Dollar</td>
+            <td id="rate" disabled=""> 7.80</td>
+            <td><input id="value3" size="10" readonly></td>
+        </tr>
+        <tr>
+            <td id= "currencyType">Japanese Yen</td>
+            <td id="rate" disabled=""> 108.38</td>
+            <td><input id="value4" size="10" readonly></td>
+        </tr>
+        <tr>
+            <td id= "currencyType">Mexican Peso</td>
+            <td id="rate" disabled=""> 19.11</td>
+            <td><input id="value5" size="10" readonly></td>
+        </tr>
+        <tr>
+            <th id= "currencyType" colspan="2">Enter Amount od U.S Dollars</th>
+            <td><input name="dollars" id="dollars" type="text" size="10"></td>
+        </tr>
+        <script>
+            $("#dollars").focus(function(){
+                $(this).css("background-color", "#FDDAC7");
+            });
+        </script>
+       </table>
+       <br><br>
+       <input type="button" onclick="exchange()" value="SUBMIT">
+       <input type="reset" value="RESET">
+    </form>
+
+    </div>
+</div> 
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE hmtl>
+<html lang="en">
+
+<head>
+    <title>CNIT 133 Homework 2 - Basic Operations</title>
+    <meta name="description" content="Use javaScript to build 3 different scripts">
+    <meta charset="utf-8">
+
+    <style>
+        body{
+            background-color:#F0DBD6;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 100px;
+        }
+        h1{
+            text-align: center;
+            color: #6F7EE4;
+        }
+
+        a:link{
+            color: #52183A;
+            font-weight: bold;
+        }
+
+        a:visited{
+            
+            color: #D5387D;
+        }
+
+        #left-column ul li{
+            list-style-type: none;
+            width:150px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.301);
+            border-radius: 12px;
+            margin-bottom: 5px;
+
+        }
+
+        #content {
+            display:flex;
+            flex-direction: row;
+        }
+
+        #right-column{
+            padding-left: 20px;
+        }
+    </style>
+
+    <script>
+        function operations() {
+     var n1, n2, n3, sum, average, prod, smallest, largest;
+
+     n1 = parseInt(document.forms["numbers"].elements["num1"].value);
+     n2 = parseInt(document.forms["numbers"].elements["num2"].value);
+     n3 = parseInt(document.forms["numbers"].elements["num3"].value);
+ if (isNaN(n1) || isNaN(n2) || isNaN(n3)){
+        alert("Please, make sure the inputs are all NUMBERS");
+   
+    
+    }
+         else{
+            sum = n1 + n2 + n3;
+            average = (n1 + n2 + n3)/3; 
+            prod = n1 * n2 * n3; 
+            smallest = Math.min(n1, n2, n3);
+            largest = Math.max(n1, n2, n3);
+            }
+
+         document.getElementById("results").value = ("The sum is: " + sum + ", the average is: " + average +", the product is: " + prod+ ", the smallest integer is: "+smallest+", the largest integer is: "+largest);
+
+     }
+    </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+     $(document).ready(function(){
+         $("button").click(function(){
+             $("#results").fadeTo("slow", 0.15);
+         });
+     });
+</script>
+</head>
+
+<body>
+
+  <header>  <h1>CNIT 133 Homework 2 - Basic Operations</h1></header>
+<div id="content">
+    <div id="left-column">
+        <ul>
+            <li><a href="hmw2.html"> Hmw Home</a></li>
+            <li><a href="hmw2-part1.html">Part 1</a> </li>
+            <li><a href="hmw2-part2.html">Part 2</a> </li>
+            <li><a href="hmw2-part3.html">Part 3</a> </li>
+            <li><a href="hmw2-credit.html">Extra Credit</a></li>
+        </ul>
+    </div>
+
+    <div id="right-column">
+        <h3>Part 2:</h3> 
+       <p>
+        Please insert three integer numbers. We will return the sum, average, product, the smallest and largest integer of the three.</p>
+        <form name="numbers">
+            <table>
+                <tr>
+                    <td>First Number:</td>
+                    <td><input type="text" name="num1" size="10"></input></td>
+                 </tr>
+                 <tr>
+                    <td>Second Number:</td>
+                    <td><input type="text" name="num2" size="10"></input></td>
+                 </tr>
+                 <tr>
+                    <td>Third Number:</td>
+                    <td><input type="text" name="num3" size="10"></input></td>
+                 </tr> 
+                
+            </table>
+            <br> 
+            <input type="button" onclick="operations()" value="SUBMIT">
+            <input type="reset" value="RESET">
+            <br><br>
+           
+            <textarea type="text" rows="4" cols="50" id="results" readonly></textarea>
+             <br><br>
+        </form> 
+        <button> Click to fade the results</button>
+    </div>
+</div>
+    
+</body>
+
+</html>
