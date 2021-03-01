@@ -1,4 +1,4 @@
-<!DOCTYPE hmtl>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>CNIT 133 Homework 2 - Basic Operations</title>
@@ -56,10 +56,10 @@
             padding: 4px;
         }
         
-        #rate, #dollars, #value1, #value2, #value3, #value4, #value5{
+        .rate, #dollars, #value1, #value2, #value3, #value4, #value5{
           text-align: right;  
         }
-        #currencyType{
+        .currencyType{
             text-align: center;
         }
         #instructions {
@@ -140,32 +140,32 @@
                <th>Value</th>
            </tr>
            <tr>
-               <td id= "currencyType">Euro</td>
-               <td id="rate" disabled=""> 0.89</td>
+               <td class= "currencyType">Euro</td>
+               <td class="rate" > <input 0.89 readonly></td>
                <td><input id="value1" size="10" readonly></td>
            </tr>
            <tr>
-            <td id= "currencyType">Canadian Dolla</td>
-            <td id="rate" disabled=""> 1.31</td>
+            <td class= "currencyType">Canadian Dolla</td>
+            <td class="rate"> 1.31</td>
             <td><input id="value2" size="10" readonly></td>
         </tr>
         <tr>
-            <td id= "currencyType">Hong Kong Dollar</td>
-            <td id="rate" disabled=""> 7.80</td>
+            <td class= "currencyType">Hong Kong Dollar</td>
+            <td class="rate"> 7.80</td>
             <td><input id="value3" size="10" readonly></td>
         </tr>
         <tr>
-            <td id= "currencyType">Japanese Yen</td>
-            <td id="rate" disabled=""> 108.38</td>
+            <td class= "currencyType">Japanese Yen</td>
+            <td class="rate"> 108.38</td>
             <td><input id="value4" size="10" readonly></td>
         </tr>
         <tr>
-            <td id= "currencyType">Mexican Peso</td>
-            <td id="rate" disabled=""> 19.11</td>
+            <td class= "currencyType">Mexican Peso</td>
+            <td class="rate"> 19.11</td>
             <td><input id="value5" size="10" readonly></td>
         </tr>
         <tr>
-            <th id= "currencyType" colspan="2">Enter Amount od U.S Dollars</th>
+            <th class= "currencyType" colspan="2">Enter Amount od U.S Dollars</th>
             <td><input name="dollars" id="dollars" type="text" size="10"></td>
         </tr>
         <script>
