@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CNIT 1333 - Functions</title>
+        <meta name="description" content="Use javaScript to build 3 different scripts">
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+       
+
+
+        <style>
+            *{box-sizing: border-box;}
+            body{
+                margin: 0;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin: 20px 100px;
+            }
+            #navbar{
+                overflow: hidden;
+                
+            }
+            #navbar a{
+                float: left;
+                display: block;
+                color: #2F375E;
+                text-align: center;
+                padding: 16px 16px;
+                text-decoration: none;
+                font-size: 16px;
+            }
+            #navbar a:hover{
+                background-color: #fddac773;
+                color: #2F375E;
+            }
+
+            .active{
+                background-color: #FFBCB2;
+                color: #2F375E;
+            }
+
+            #tab1{
+                text-align: center;
+                color: white;
+                background-color: #6f7fe4cc;
+                padding: 16px 16px;;
+                border-radius: 12px;
+                
+            }
+            input[type=text]{
+                padding: 4px;
+                border: 0;
+                border-radius: 5px;
+                width: 8%;
+               
+            }
+         .form-button{
+                padding: 4px;
+                border: 0;
+                border-radius: 5px;
+                width: 8%;
+                box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.253);
+
+         }
+         textarea{
+                width: 40%;
+                resize: vertical;
+                padding: 4px;
+                border: 0;
+                border-radius: 5px;
+                box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.253);
+
+         }
+            
+
+
+        </style>
+
+       <script>
+
+           
+            $(document).ready(function(){
+                $("#grades").validate({
+                    rules:
+                    {
+                        hmw: { required: true, number:true, min:0, max:100 },
+                        midterm: { required: true, number:true, min:0, max:100 },
+                        final: { required: true, number:true, min:0, max:100 },
+                        participation: { required: true, number:true, min:0, max:100 }
+                    },
+                    messages: {
+                        hmw: "  Please enter a score between 0 and 100",
+                        midterm: "  Please enter a score between 0 and 100",
+                        final: "    Please enter a score between 0 and 100",
+                        participation: "    Please enter a score between 0 and 100"
+                    }
+                });
+            });
+
+            function finalGrade(){
+                if($("#grades").valid()){
+                    var myHmw = parseFloat(document.getElementById("hmw").value);
+                    var myMidterm =  parseFloat(document.getElementById("midterm").value);
+                    var myFinal = parseFloat(document.getElementById("final").value);
+                    var myParticipation = parseFloat(document.getElementById("participation").value);
+
+                    var myFinalaverage = parseInt((.5*myHmw) + (.2*myMidterm) + (.2*myFinal) +(.1*myParticipation));
+               
+
+                    switch(parseInt(myFinalaverage/10))
+                    {
+                        case 10:
+                        case 9:
+                            document.getElementById("results").value= ("The student final average is " +myFinalaverage +" and final grade is A");
+                            break;
+                        case 8:
+                        document.getElementById("results").value= ("The student final average is " +myFinalaverage +" and final grade is B");
+                            break;
+                        case 7:
+                        document.getElementById("results").value= ("The student final average is " +myFinalaverage +" and final grade is c");
+                            break;
+                        case 6:
+                        document.getElementById("results").value= ("The student final average is " +myFinalaverage +" and final grade is D. The student must retake the course");
+                            break;
+                       default:
+                        document.getElementById("results").value= ("The student final average is " +myFinalaverage +" and final grade is F. The student must retake the course");    
+                            
+                    }
+                    
+                }
+
+
+            }
+
+            function pagebar(){
+                var links = document.getElementById('navbar').getElementsByTagName("a");
+                var current = location.href;
+                for (var i =0; i < links.length; I++){
+                    if(links[i].href == current){
+                        links[i].href =" ";
+                        links[i].className='active';
+                    }
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+       
+        <header>
+            <div id="navbar">
+            <a class="navpage" href="assigments.html" target="_parent">Home</a>
+            <a class="navpage" href="hmw2-part1.html" target="_parent">Part 1</a> 
+            <a class="navpage" href="hmw2-part2.html" target="_parent">Part 2</a> 
+            <a class="navpage" href="hmw2-part3.html" target="_parent">Part 3</a> 
+            <a class="navpage" href="hmw2-credit.html" target="_parent">Extra Credit</a>
+               
+        </div>
+        </header>
+
+        <h1>CNIT 133 Homework 3 - Functions</h1>
+        <div id="tab1" class="content">
+            <h2>Part 1: Student Grades </h2>  
+        <form id="grades">
+        
+                <label for="hmw">Homework Average:</label>
+                <input type="text" name="hmw" id="hmw" size="5"><br><br>
+
+                <label for="midterm">Mid-term Exam Score:</label>
+                <input type="text" name="midterm"  id="midterm" size="5"><br><br>
+                
+                <label for="final">Final Exam Score:</label>
+                <input type="text" name="final" id="final" size="5"><br><br>
+
+                <label for="participation"> Participation:</label>
+                <input type="text" name="participation" id="participation" size="5">
+                  
+            <br><br>
+            <input class="form-button" type="button" onclick="finalGrade()" value="SUBMIT">
+            <input class="form-button" type="reset" value="Reset" onclick="window.location.reload()">
+
+            <br><br>
+
+            <textarea  rows="3" cols="40" id="results" readonly></textarea>
+
+        </form>
+    </div>
+
+
+
+
+
+    </body>
+
+</html>
