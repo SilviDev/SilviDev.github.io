@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CNIT 1333 - Functions</title>
+        <meta name="description" content="Use javaScript and jQuery to build a project">
+        <meta charset="utf-8">
+
+
+        <style>
+             *{box-sizing: border-box;}
+            body{
+                margin: 0;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin: 20px 100px;
+            }
+            #navbar{
+                overflow: hidden;
+                
+            }
+            #navbar a{
+                float: left;
+                display: block;
+                color: #2F375E;
+                text-align: center;
+                padding: 16px 16px;
+                text-decoration: none;
+                font-size: 16px;
+            }
+            #navbar a:hover{
+                background-color: #fddac773;
+                color: #2F375E;
+            }
+
+            #content {
+                text-align: center;
+                color: white;
+                background-color: #6f7fe4cc;
+                padding: 16px 16px;;
+                border-radius: 12px;
+                width: 40%;
+                min-width: 100px;
+                
+            }
+            input{
+                padding: 4px;
+                border: 0;
+                border-radius: 5px;
+                width: 30%;
+                min-width: 100px;
+               
+            }
+         button{
+                padding: 4px;
+                border: 0;
+                border-radius: 5px;
+                width: 20%;
+                min-width: 100px;
+                box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.253);
+
+         }
+            
+        </style>
+
+        <script>
+
+            var num1;
+            var num2;
+
+            function integerPartOfTheQuotient(dividend, divisor){
+				var q = Math.floor(dividend / divisor);
+				return q;
+			}
+
+            function checkAnswer(){
+                var input = parseInt(document.getElementById("answer").value);
+                if (input == num1*num2){
+                    document.getElementById("answer").value = " ";
+                    document.getElementById("result").innerHTML = "Very good!";
+                        next();
+
+                }
+                else
+                    document.getElementById("answer").value = " ";
+                    document.getElementById("result").innerHTML = "Try again";
+
+            }
+
+            function next(){
+                var x= confirm("Do you wich to continue practicing?");
+                if(x === true){
+                    getRndInteger();
+                } 
+                
+                else{
+                    document.getElementById("answer").value = " ";
+                    document.getElementById("result").innerHTML = "see you next time";
+                }
+                
+            }
+            function getRndInteger(){
+                document.getElementById("content").style.visibility='visible';
+                num1 =Math.floor(Math.random()*10);
+                num2 =Math.floor(Math.random()*10);
+                document.getElementById("question").innerHTML = "How much is  "+ num1 + " times " +num2 +" ?";
+                document.getElementById("answer").focus();
+            }
+
+
+            function start(){
+                document.getElementById("content").style.visibility='hidden';
+                getRndInteger();
+            }
+
+        </script>
+    </head>
+    <body onload="start()">
+        <header>
+            <div id="navbar">
+                <a class="navpage" href="assigments.html" target="_parent">Home</a>
+                <a class="navpage" href="hmw3-functions.html" target="_parent">Part 1</a> 
+                <a class="navpage" href="hmw3-part2.html" target="_parent">Part 2</a> 
+                <a class="navpage" href="hmw3-part3.html" target="_parent">Part 3</a> 
+                <a class="navpage" href="hmw3-part4.html" target="_parent">Part 4</a>
+                      
+        </div>
+        </header>
+
+
+        <h1>CNIT 133 Homework 3 - Functions</h1>
+        <h2>Learn Multiplication</h2>
+       
+        <div id="content">
+            <label id="question"> </label>
+            <input type="text" id="answer"><br><br>
+         <button onclick="checkAnswer()"> Check</button><br>
+           <label id="result"></label>
+
+        </div>
+    </body >
+
+
+
+</html>

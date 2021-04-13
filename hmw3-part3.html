@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CNIT 133 Functions</title>
+        <meta name="description" content="Use javaScript  to build a project">
+        <meta charset="utf-8">
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+       
+
+        <style>
+              *{box-sizing: border-box;}
+            body{
+                margin: 0;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin: 20px 100px;
+            }
+
+            #content{
+                text-align: justify;
+                color: white;
+                background-color: #6f7fe4cc;
+                padding: 16px 16px;;
+                border-radius: 12px;
+                width: 80%;
+                
+            }
+            #navbar{
+                overflow: hidden;
+                
+            }
+            #navbar a{
+                float: left;
+                display: block;
+                color: #2F375E;
+                text-align: center;
+                padding: 16px 16px;
+                text-decoration: none;
+                font-size: 16px;
+            }
+            #navbar a:hover{
+                background-color: #fddac773;
+                color: #2F375E;
+            }
+
+            input{
+                padding: 4px;
+                border: 0;
+                border-radius: 5px;
+                width: 20%;
+            }
+         .form-button{
+                padding: 4px;
+                border: 0;
+                border-radius: 5px;
+                width: 8%;
+                box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.253);
+         }
+
+         form{
+             display: flex;
+             flex-direction: column;
+         }
+
+        </style>
+
+        <script>
+            $(document).ready(function(){
+                $("#conversion").validate({
+                    rules:
+                    {
+                        temp:{required:true, number:true}
+                    },
+                    messages:{
+                        temp:"Please, insert a valid temperature."
+                    }
+                });
+            });
+
+            function celsiusConversion(){
+                if($("#conversion").valid()){
+                    var temperatura = parseFloat(document.getElementById("temp").value);
+                    var celsTemp = parseInt((5/9*temperatura)+32);
+                    document.getElementById("celsius").value = celsTemp;
+                }
+            }
+
+            function fahrenConversion(){
+                if($("#conversion").valid()){
+                    var temperatura = parseFloat(document.getElementById("temp").value);
+                    var fahrenTemp = parseInt(5/9*(temperatura-32));
+                    document.getElementById("fahrenheit").value = fahrenTemp;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div id="navbar">
+                <a class="navpage" href="assigments.html" target="_parent">Home</a>
+                <a class="navpage" href="hmw3-functions.html" target="_parent">Part 1</a> 
+                <a class="navpage" href="hmw3-part2.html" target="_parent">Part 2</a> 
+                <a class="navpage" href="hmw3-part3.html" target="_parent">Part 3</a> 
+                <a class="navpage" href="hmw3-part4.html" target="_parent">Part 4</a>
+                      
+        </div>
+        </header>
+        <h1>CNIT 133 Homework 3 - Functions</h1>
+        <div id="content">
+            
+            <h2>Part 3: Temperature Conversion</h2>
+            <form id="conversion">
+
+                <div id="convert1">
+                <label for="temp">Insert temperature: </label>
+                <input type="text" id="temp" name="temp" class="temp"></input>
+                </div><br>
+                <div id="convert2">
+                <label for="celsius">To convert from Celsius to Fahrenheit click --> </label>
+                <input type="button" class="form-button" onclick="celsiusConversion()" value="Convert"></input>
+                <input id="celsius" type="number" class="celsius" readonly></input>
+            </div>
+            <br>
+
+                <div id="convert3">
+                <label for="fahrenheit">To convert from Fahrenheit  to Celsius click --> </label>
+                <input type="button" class="form-button" onclick="fahrenConversion()" value="Convert"></input>
+                <input id="fahrenheit" type="number" class="fahrenheit" readonly></input>
+            </div>
+            <br>
+
+
+            </form>
+
+        </div>
+    </body>
+
+</html>
