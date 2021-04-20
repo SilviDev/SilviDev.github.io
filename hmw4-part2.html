@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Looping Statments</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Homework4: Looping statments using javaScript">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+        <style>
+
+            *{box-sizing: border-box;}
+
+            body{
+                margin: 0;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin: 20px 100px;
+            }
+            h1{
+                color: rgb(59, 57, 57);
+            }
+
+           .navbar{
+               overflow: hidden;
+           }
+            .navbar a{
+                float: left;
+                color: rgb(59, 57, 57);
+                text-align: center;
+                padding: 16px 16px;
+                font-size: 16px;
+            }
+
+            .navbar a:hover{
+                background-color: #F3F8FE;
+                color: #2F375E;
+            }
+
+            #content{
+                color: rgb(94, 91, 91);
+                background-color: #C6CFFD;
+                padding: 16px 16px;;
+                border-radius: 12px;
+                width: 60%;
+                min-width: 100px;
+            }
+            input{
+                border: 0;
+               
+            }
+
+            table, th, td{
+                border: 1px  solid  #2F375E;
+                padding: 0.3em;
+                text-align: center;
+            }
+
+            table{
+                border-collapse: collapse;
+            }
+            th{
+                background-color: maroon;
+                color: white;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function(){
+                $("tr:odd").css({
+                    "background-color": "#FFA41D"
+                });
+            }
+            );
+        </script>
+
+
+        <script>
+            function start(){
+                document.getElementById("interest5").style.visibility="hidden";
+                document.getElementById("interest6").style.visibility="hidden";
+                document.getElementById("interest7").style.visibility="hidden";
+                compountInterest();
+            }
+
+            function compountInterest(){
+
+                document.getElementById("interest5").style.visibility="visible";
+                document.getElementById("interest6").style.visibility="visible";
+                document.getElementById("interest7").style.visibility="visible";
+                    
+                for(var tt = 5; tt<=7; tt++){
+
+                    for(var ii = 1; ii <=10; ii++)
+                    {
+                        var interest = tt/100;
+                       var a = (1000*(Math.pow((1+interest), (ii)))).toFixed(2);
+                        document.getElementById("int"+tt+"-year"+ii).innerHTML = a;
+                    }
+
+                }
+
+                    
+                }
+            
+
+            
+        </script>
+    </head>
+
+    <body onload="start()">
+        <header>
+            <div class="navbar">
+                <a class="active" href="hmw4.html" > Home - Homework 4</a>
+                <a href="hmw4-part1.html"> Part 1</a>
+                <a href="hmw4-part2.html"> Part 2</a>
+               
+            </div>
+        </header>
+        <h1>Homework 4 - Looping Statmemnts</h1>
+        <h4>Compound Interest on a principal of $1000 for interest rate of 5%</h4>
+        <table id="interest5">
+
+            <tr>
+                <th>Year</th>
+                <th>Amount on deposit</th>
+                <th>Interest Rate</th>
+            </tr>
+
+            <tr>
+                <td >1</td>
+                <td><label id="int5-year1"> </label></td>
+                <td>0.05</td>
+            </tr>
+
+            <tr>
+                <td >2</td>
+                <td><label id="int5-year2"> </label></td>
+                <td>0.05</td>
+            </tr>
+
+            <tr>
+                <td >3</td>
+                <td><label id="int5-year3"> </label></td>
+                <td>0.05</td>
+            </tr>
+
+            <tr>
+                <td >4</td>
+                <td><label id="int5-year4"> </label></td>
+                <td>0.05</td>
+            </tr>
+
+            <tr>
+                <td >5</td>
+                <td><label id="int5-year5"> </label></td>
+                <td>0.05</td>
+            </tr>
+
+            <tr>
+                <td >6</td>
+                <td><label id="int5-year6"> </label></td>
+                <td>0.05</td>
+            </tr>
+
+            <tr>
+                <td >7</td>
+                <td><label id="int5-year7"> </label></td>
+                <td>0.05</td>
+            </tr>
+
+            <tr>
+                <td >8</td>
+                <td><label id="int5-year8"> </label></td>
+                <td>0.05</td>
+            </tr>
+
+            <tr>
+                <td >9</td>
+                <td><label id="int5-year9"> </label></td>
+                <td>0.05</td>
+            </tr>
+
+            <tr>
+                <td>10</td>
+                <td><label id="int5-year10"> </label></td>
+                <td>0.05</td>
+            </tr>
+        </table>
+
+        <h4>Compound Interest on a principal of $1000 for interest rate of 6%</h4>
+        <table id="interest6">
+
+            <tr>
+                <th>Year</th>
+                <th>Amount on deposit</th>
+                <th>Interest Rate</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td><label id="int6-year1"> </label></td>
+                <td>0.06</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td><label id="int6-year2"> </label></td>
+                <td>0.06</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td><label id="int6-year3"> </label></td>
+                <td>0.06</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td><label id="int6-year4"> </label></td>
+                <td>0.06</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td><label id="int6-year5"> </label></td>
+                <td>0.06</td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td><label id="int6-year6"> </label></td>
+                <td>0.06</td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td><label id="int6-year7"> </label></td>
+                <td>0.06</td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td><label id="int6-year8"> </label></td>
+                <td>0.06</td>
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td><label id="int6-year9"> </label></td>
+                <td>0.06</td>
+            </tr>
+
+            <tr>
+                <td>10</td>
+                <td><label id="int6-year10"> </label></td>
+                <td>0.06</td>
+            </tr>
+        </table>
+
+        <h4>Compound Interest on a principal of $1000 for interest rate of 7%</h4>
+        <table id="interest7">
+
+            <tr>
+                <th>Year</th>
+                <th>Amount on deposit</th>
+                <th>Interest Rate</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td><label id="int7-year1"> </label></td>
+                <td>0.07</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td><label id="int7-year2"> </label></td>
+                <td>0.07</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td><label id="int7-year3"> </label></td>
+                <td>0.07</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td><label id="int7-year4"> </label></td>
+                <td>0.07</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td><label id="int7-year5"> </label></td>
+                <td>0.07</td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td><label id="int7-year6"> </label></td>
+                <td>0.07</td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td><label id="int7-year7"> </label></td>
+                <td>0.07</td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td><label id="int7-year8"> </label></td>
+                <td>0.07</td>
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td><label id="int7-year9"> </label></td>
+                <td>0.07</td>
+            </tr>
+
+            <tr>
+                <td>10</td>
+                <td><label id="int7-year10"> </label></td>
+                <td>0.07</td>
+            </tr>
+        </table>
+    </body>
+</html>

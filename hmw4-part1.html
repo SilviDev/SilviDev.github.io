@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Looping Statments</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Homework4: Looping statments using javaScript">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+        
+        <style>
+            *{box-sizing: border-box;}
+
+            body{
+                margin: 0;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin: 20px 100px;
+            }
+            h1{
+                color: rgb(59, 57, 57);
+            }
+
+           .navbar{
+               overflow: hidden;
+           }
+            .navbar a{
+                float: left;
+                color: rgb(59, 57, 57);
+                text-align: center;
+                padding: 16px 16px;
+                font-size: 16px;
+            }
+
+            .navbar a:hover{
+                background-color: #F3F8FE;
+                color: #2F375E;
+            }
+
+            #content{
+                color: rgb(94, 91, 91);
+                background-color: #C6CFFD;
+                padding: 16px 16px;;
+                border-radius: 12px;
+                width: 60%;
+                min-width: 100px;
+            }
+
+            #draggable{
+                width: 90px;
+                height: 90px;
+                padding: 0.5em;
+                background-color: #E8D2FE;
+                text-align: center;
+                border-radius: 12px;
+
+                animation-name: draggable;
+                animation-timing-function: linear;
+                animation-delay: 1s;
+                animation-duration:18s;
+                animation-iteration-count: infinite;
+                animation-direction: reverse;
+
+            }
+            @keyframes draggable{
+                0%  { background: pink;}
+                25% { background: lightgoldenrodyellow;}
+                50% { background: lightgreen;}
+                75% { background: lightsalmon;}
+                100%{ background: pink;}
+            }
+
+
+
+        </style>
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script>
+            $(function(){
+                $("#draggable").draggable();
+            });
+        </script>
+
+
+
+        <script>
+            function start(){
+                document.getElementById("content1").style.visibility="hidden";
+                document.getElementById("content2").style.visibility="hidden";
+                operations1();
+            }
+
+            function operations1(){
+                document.getElementById("content1").style.visibility="visible";
+                var sum = 0;
+                var mult = 1;
+                for(var n = 5; n<=21; n+=4){
+                    sum +=n;
+                    mult = mult *n;
+
+                }
+                document.getElementById("answer1").innerHTML = "The result of 5 + 9 + 13 + 17 + 21 is:  "+ sum; 
+                document.getElementById("answer2").innerHTML = "The result of 5 * 9 * 13 * 17 * 21 is:  "+ mult;
+            
+                operations2();
+            }
+
+            function operations2(){
+                document.getElementById("content2").style.visibility="visible";
+                var sum = 0;
+                var mult = 1;
+                var x = 3;
+                while(x <= 21){
+                    sum += x;
+                    mult = mult * x;
+                    x +=3;
+                }
+                document.getElementById("answer3").innerHTML = "The result of 3 + 6 + 9 + 12 + 15 + 18 + 21 is:  "+ sum; 
+                document.getElementById("answer4").innerHTML = "The result of 3 * 6 * 9 * 12 * 15 * 18 * 21 is:  "+ mult;
+            
+
+            }
+          
+               
+        </script>
+
+   
+    </head>
+
+    <body onload="start()">
+        <header>
+            <div class="navbar">
+                <a class="active" href="hmw4.html" > Home - Homework 4</a>
+                <a href="hmw4-part1.html"> Part 1</a>
+                <a href="hmw4-part2.html"> Part 2</a>
+              
+            </div>
+        </header>
+        <h1>Homework 4 - Looping Statmemnts</h1>
+        <div id="content">
+        <div id="content1">   
+            <h3>Part 1a: Use of the for-statment to calculate the product and sum of the fourth integer from 5 to 21. </h3>
+           <label id="answer1"> </label>
+           <br><br> <label id="answer2"></label>
+        </div>
+        <div id="content2"></div>
+        <h3>Part 2b: Use of the While-statment to calculate the product and sum of the third integer from 3 to 21.</h3>
+        <label id="answer3"> </label>
+        <br><br> <label id="answer4"></label>
+    </div>
+    <div id="draggable" class="draggable">
+        <p>Drag me around!</p>
+    </div>
+     
+    </body>
+</html>
