@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Arrays</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Homework5:  Arrays using javaScript">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+       
+
+        <style>
+
+        *{box-sizing: border-box;}
+
+        body{
+            margin: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 20px 100px;
+        }
+        h1{
+            color: rgb(59, 57, 57);
+        }
+                    .navbar{
+            overflow: hidden;
+        }
+         .navbar a{
+             float: left;
+             color: rgb(59, 57, 57);
+             text-align: center;
+             padding: 16px 16px;
+             font-size: 16px;
+         }
+
+         .navbar a:hover{
+             background-color: #F3F8FE;
+             color: #2F375E;
+         }
+         .error{
+             color: #2F375E;
+             padding: 3px;
+             margin: 3px;
+             border-radius: 5px;
+             background-color: rgba(255, 255, 255, 0.61);
+             font-size: x-small;
+            
+         }
+         #content{
+                color: rgb(94, 91, 91);
+                background-color: #C6CFFD;
+                padding: 16px 16px;;
+                border-radius: 12px;
+                width: 100%;
+                min-width: 100px;
+            }
+
+
+            input[type=submit]{
+                padding: 4px;
+                border: 0;
+                border-radius: 5px;
+                width: 10%;
+                box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.253);
+
+         }
+         input[type=reset]{
+                padding: 4px;
+                border: 0;
+                border-radius: 5px;
+                width: 10%;
+                box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.253);
+
+         }
+         input[type="text"]{
+             border-radius: 5px;
+             width: 50%;
+         }
+         
+         form{
+           
+                text-align: left;
+                color: white;
+                background-color: #6f7fe4cc;
+                padding: 16px 16px;;
+                border-radius: 12px;
+                width: 75%;                     
+         }
+         select{
+                border-radius: 5px;
+                width: 50%;
+         }
+         .buttons{
+             text-align: center;
+         }
+      
+</style>
+
+<script>
+    $(document).ready(function(){
+        $("#user-information").validate({
+
+
+            messages: {
+                name: " Please enter your name",
+                classes: " Please choose at least one class",
+                location: " Please choose a location",
+                time: " Please choose a time for the class",
+                
+
+            },
+            errorPlacement: function(error, element){
+                if(element.is(":radio") || element.is(":checkbox")){
+                    error.appendTo(element.parent());
+                } else {
+                    error.insertAfter(element);
+                }
+            }
+        });
+    });
+</script>
+    </head>
+
+
+    <body>
+        <header>
+            <div class="navbar">
+                <a class="active" href="hmw5.html" > Home - Homework 5</a>
+                <a href="hmw5-part1.html"> Part 1</a>
+                <a href="hmw5-part2.html"> Part 2</a>
+                <a href="hmw5-part3.html"> Part 3</a>           
+            </div>
+        </header>
+        <h1>Homework 5 - Arrays</h1>
+        <div class="content">
+        <form action="formOK.html" method="post" id="user-information" >
+            <table>
+                <tr>
+                    <td> User name: </td>
+                    <td> <input type="text" name="name" id="name" required></td>
+                </tr>
+                <tr>
+                    <td>Please select one of our locations:</td>
+                    <td> San Francisco<input type="radio" id="location1" name="location" value="San Francisco" required> 
+                        Oakland<input type="radio" id="location2" name="location" value="Oakland">
+                        Marin<input type="radio" id="location3" name="location" value="Marin"></td>
+                </tr>
+                <tr><td colspan="2">Select the class you want to be part of:</td> </tr>
+                <tr>
+                    <td colspan="2">Sculpture<input type="checkbox" id="class1" name="classes" value="Sculpture" required>
+                        Painting<input type="checkbox" id="class2" name="classes" value="Painting" >
+                        Drawing <input type="checkbox" id="class3" name="classes" value="Drawing">
+                        Digital Media<input type="checkbox" id="class4" name="classes" value="Digital Media"></td>
+                </tr>
+                <tr><td><label for="time">Select your prefer time to take the class:</label></td>
+                    <td><select name="time" id="time" required>
+                        <option value=""> --Choose one--</option>
+                        <option value="morning">Morning</option>
+                        <option value="afternoon">Afternoon</option>
+                        <option value="evening">Evening</option>
+                    </select></td></tr>
+                
+            </table>
+            <div class="buttons">
+                <br>
+            <input type="submit" id="submit" value="Submit">
+            <input type="reset" value="Reset" onclick="window.location.reload()">
+            </div>
+
+        </form>
+        </div>
+
+            
+         
+
+            
+            
+
+    </body>
+</html>

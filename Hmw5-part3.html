@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Looping Statments</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Homework 5 - Arrays">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+  
+        <style>
+            *{box-sizing: border-box;}
+
+            body{
+                margin: 0;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin: 20px 100px;
+            }
+            #coment{
+                padding: 10px 10px;
+                border: 0;
+                border-radius: 5px;
+                width: 30%;
+                min-height: 30%;
+                background-color: #fddac736;
+                text-align: left;
+
+            }
+
+        .button{
+                padding: 4px;
+                border: 0;
+                border-radius: 5px;
+                width: 7%;
+                min-width: 50px;
+                box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.253);
+
+         }
+           
+         .navbar{
+            overflow: hidden;
+        }
+         .navbar a{
+             float: left;
+             color: rgb(59, 57, 57);
+             text-align: center;
+             padding: 16px 16px;
+             font-size: 16px;
+         }
+
+         .navbar a:hover{
+             background-color: #F3F8FE;
+             color: #2F375E;
+         }
+        </style>
+
+        <script>
+            var stateArray =[
+                ["AL", "Alabama", "Montgomery", "4,887,571"],
+                ["AK", "Alaska", "Juneau", "737,438"],
+                ["AZ", "Arizona", "Phoenix", "7,171,646"],
+                ["AR", "Arkanzas", "Little Rock", "3,010,825"],
+                ["CA", "California", "Sacramento", "39,557,045"],
+                ["CO", "Colorado", "Denver", "5,694,564"]
+            ];
+
+            function stateInfo(){
+                var search = document.forms["censusForm"].elements["stateName"].value;
+                search = search.toUpperCase();
+
+                var found ="false";
+                for(var ii=0; ii < stateArray.length; ii++){
+                    if((stateArray[ii][0] == search) || (stateArray[ii][1].toUpperCase() == search) ){
+                        document.forms["censusForm"].elements["coment"].value = "Thanks for your inquiry, here is the information you requested: \nState Abbr. = " + stateArray[ii][0]+
+                        "\nState Name = "+  stateArray[ii][1] + "\nCapital = " + stateArray[ii][2] + "\nPopulation = " + stateArray[ii][3];
+
+                        ii = stateArray.length;
+                        found = true;
+
+                    }
+                    else {
+                    document.forms["censusForm"].elements["coment"].value = "State not found!";
+
+                }
+                }
+
+            }
+            
+        </script>
+
+   
+    </head>
+
+    <body>
+        <header>
+            <div class="navbar">
+                <a class="active" href="hmw5.html" > Home - Homework 5</a>
+                <a href="hmw5-part1.html"> Part 1</a>
+                <a href="hmw5-part2.html"> Part 2</a>
+                <a href="hmw5-part3.html"> Part 3</a>           
+            </div>
+        </header>
+        <h1>Homework 5 - Arrays</h1>
+        <h3>State Information From 2018 Census</h3>
+        <form name="censusForm">
+            <label for="stateName">Enter the state name you want to look up: </label>
+            <input type="text" name="stateName" id="stateName">
+            <input type="button" value="Sate Info" class="button" onclick="stateInfo()"> <br><br>
+            <textarea cols="50" rows="7" name="coment" id="coment"></textarea>
+           
+            <br><br><input type="reset" value="Reset" class="button" onclick="window.location.reload()">
+           
+
+        </form>
+       
+    
+
+    </body>
+</html>

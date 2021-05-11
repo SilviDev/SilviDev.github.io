@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Looping Statments</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Homework 5 - Arrays">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+  
+        <style>
+            *{box-sizing: border-box;}
+
+            body{
+                margin: 0;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin: 20px 100px;
+            }
+            .menu{
+                text-align: center;
+                background-color: #6f7fe4cc;
+                padding: 16px 16px;
+                max-width: 300px;
+                border-radius: 5px;
+                
+            }
+           
+            .navbar{
+            overflow: hidden;
+        }
+         .navbar a{
+             float: left;
+             color: rgb(59, 57, 57);
+             text-align: center;
+             padding: 16px 16px;
+             font-size: 16px;
+         }
+
+         .navbar a:hover{
+             background-color: #F3F8FE;
+             color: #2F375E;
+         }
+        </style>
+<script>
+    function newPage(myForm){
+        var myList = myForm.menu1.options[myForm.menu1.selectedIndex].value;
+        window.location = myList;
+    }
+
+    function newBlog(myForm){
+        var myOpt = myForm.menu2.options[myForm.menu2.selectedIndex].value;
+        window.location = myOpt;
+    }
+</script>
+
+   
+    </head>
+
+    <body>
+        <header>
+            <div class="navbar">
+                <a class="active" href="hmw5.html" > Home - Homework 5</a>
+                <a href="hmw5-part1.html"> Part 1</a>
+                <a href="hmw5-part2.html"> Part 2</a>
+                <a href="hmw5-part3.html"> Part 3</a>           
+            </div>
+        </header>
+        <h1>Homework 5 - Arrays</h1>
+        <h3>Pulldown menu 1(onchange): Websites you should visit to learn Web Development</h3>
+        <div class="menu">
+            <form>
+                <select name="menu1" onchange="newPage(this.form);">
+                    <option>Choose a website: </option>
+                    <option value="https://www.freecodecamp.org/">FreeCodeCamp</option>
+                    <option value="https://www.udemy.com/courses/development/web-development/">Udemy</option>
+                    <option value="https://www.coursera.org/">Coursera</option>
+                    <option value="https://teamtreehouse.com/">Treehouse</option>
+        
+                </select>
+            </form>
+        </div>
+        <h3>Pulldown menu 2(onclick): Top web development blogs</h3>
+        <div class="menu">
+            <form>
+                <select name="menu2">
+                    <option>Choose a blog: </option>
+                    <option value="https://www.sitepoint.com/">SitePoint</option>
+                    <option value="https://www.hongkiat.com/blog/">Hongkiat</option>
+                    <option value="https://css-tricks.com/">CSS-Tricks</option>
+                    <option value="https://webdesignledger.com/">Web Design Ledger</option>
+        
+                </select>
+                <input type="button" value="Go" onclick="newBlog(this.form);">
+            </form>
+        
+        </div>
+        
+
+    
+
+    </body>
+</html>
