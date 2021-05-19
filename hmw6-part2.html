@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Homework 6 - Objects</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Homework 6 - Objects">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+
+
+
+        <style>
+            *{box-sizing: border-box;}
+
+            body{
+                margin: 0;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin: 20px 100px;
+                
+            }
+
+            textarea{
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                width: 60%;
+              
+            }
+
+           
+            .navbar a{
+                float: left;
+                color: #2F375E;
+                text-align: left;
+                padding: 16px 16px;
+                font-size: 16px;
+            }
+
+            .navbar a:hover{
+                background-color: #fddac773;
+                color: #2F375E;
+            }
+
+            .navbar a.active{
+                background-color: #fddac773;
+                color: #2F375E;
+            }
+            h1{
+            color: rgb(59, 57, 57);
+            padding-top: 15px;
+        }
+
+            .content{
+                color: rgb(94, 91, 91);
+                background-color: #C6CFFD;
+                padding: 16px 16px;;
+                border-radius: 12px;
+                width: 100%;
+                min-width: 100px;
+                
+                
+            }
+
+            input[type=reset]{
+                padding: 4px;
+                border: 0;
+                border-radius: 5px;
+                width: 20%;
+                box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.253);
+               
+
+         }
+         input[type="text"]{
+             border-radius: 5px;
+             width: 20%;
+         }
+         input[type=button]{
+                padding: 4px;
+                border: 0;
+                border-radius: 5px;
+                width: 20%;
+                box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.253);
+
+         }
+
+ 
+         form{
+           
+           text-align: left;
+           color: white;
+           background-color: #6f7fe4cc;
+           padding: 20px 20px;;
+           border-radius: 12px;
+           width: 50%;                     
+    }
+
+
+        </style>
+
+        <script>
+            function countChar(){
+            
+            var count = 0;
+            var textString = document.getElementById("textInput").value;
+            var textString = textString.toLowerCase();
+            var key = document.getElementById("character").value.toLowerCase();
+           
+            for(ii =0; ii<textString.length; ii++){
+
+                if(textString.charAt(ii) == key){
+                    count++;
+                   
+                }
+              
+            }
+
+            if(count == 0){
+                var myText = "<html>\n";
+                myText += "<head>\n";
+                myText += "</head>\n";
+                myText += "<body>\n";
+                myText += "<h2> Search character not found in text string!</h2>\n";
+                myText += "</body>\n";
+                myText += "</html>";
+
+                var newWindow = window.open("", "new_window", "top=300,left=700,width=300,height=100");
+                    newWindow.document.write(myText);
+                    newWindow.document.close();
+
+                document.getElementById("result").value = "";
+                document.getElementById("textInput").value = "";
+                document.getElementById("character").value = "";
+                
+            }
+            else{
+                document.getElementById("result").value = "There is "+ count +" occurrences of "+ key + " on the text.";
+
+            }
+            }
+        </script>
+
+
+    </head>
+
+    <body>
+        <header>             
+            <div class="navbar">
+            <a class="active" href="hmw6.html" > Home - Homework 6</a>
+            <a href="hmw6-part1.html"> Part 1 </a>
+            <a href="hmw6-part2.html"> Part 2 </a>
+            <a href="hmw6-part3.html"> Part 3</a>
+             </div>
+        </header>
+         <br><h1>Homework 6 - Objects</h1>
+         <div id="content">
+             <form id="myform">
+                 <h4>Enter your text:  </h4>
+                 <textarea name="textInput" id="textInput" rows="3" cols="50" autofocus></textarea>
+                 <br><br>
+                 <label for="character">Enter the character you want to count in your text: </label><br><br>
+                 <input type="text" id="character" >
+                 <input type="button" value="Count" onclick="countChar()">
+                 <input type="reset" value="Reset" onclick="window.location.reload()">
+                 <br><br>
+                 <textarea  id="result" rows="2" cols="30" readonly></textarea>
+                 <br><br>
+
+
+             </form>
+
+ 
+       
+         </div>
+    </body>
+
+
+</html>

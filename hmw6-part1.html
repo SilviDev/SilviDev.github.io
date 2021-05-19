@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Homework 6 - Objects</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Homework 6 - Objects">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+
+
+
+        <style>
+            *{box-sizing: border-box;}
+
+            body{
+                margin: 0;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin: 20px 100px;
+                text-align: center;
+            }
+
+            textarea{
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+              
+            }
+
+           
+            .navbar a{
+                float: left;
+                color: #2F375E;
+                text-align: left;
+                padding: 16px 16px;
+                font-size: 16px;
+            }
+
+            .navbar a:hover{
+                background-color: #fddac773;
+                color: #2F375E;
+            }
+
+            .navbar a.active{
+                background-color: #fddac773;
+                color: #2F375E;
+            }
+            h1{
+            color: rgb(59, 57, 57);
+            padding-top: 15px;
+        }
+
+            .content{
+                color: rgb(94, 91, 91);
+                background-color: #C6CFFD;
+                padding: 16px 16px;;
+                border-radius: 12px;
+                width: 100%;
+                min-width: 100px;
+            }
+
+            input[type=reset]{
+                padding: 4px;
+                border: 0;
+                border-radius: 5px;
+                width: 10%;
+                box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.253);
+               
+
+         }
+         input[type="text"]{
+             border-radius: 5px;
+             width: 20%;
+         }
+         input[type=button]{
+                padding: 4px;
+                border: 0;
+                border-radius: 5px;
+                width: 10%;
+                box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.253);
+
+         }
+         form{
+           
+           text-align: left;
+           color: white;
+           background-color: #6f7fe4cc;
+           padding: 16px 16px;;
+           border-radius: 12px;
+           width: 75%;                     
+    }
+
+
+        </style>
+
+        <script>
+           
+
+        function operations(){
+            var floatNumber = document.getElementById("num").value;
+            numRegExp= /^\d*(\.\d{4,})$/;
+            if(!numRegExp.test(floatNumber) || isNaN(floatNumber)){
+          document.getElementById("error").innerHTML = "Invalid input, make sure your number has at least 4 decimal digits.";
+          document.getElementById("error").style.color = " rgb(94, 91, 91)";
+            }
+            else{
+                document.getElementById("error").innerHTML = "";
+                var integer = Math.round(parseFloat(document.getElementById("num").value));
+                var squareRoot = Math.round(Math.sqrt(parseFloat(document.getElementById("num").value)));
+                var roundToTenths = Math.floor( (parseFloat(document.getElementById("num").value)) * 10 + .5 ) / 10;
+                var roundToHundredths = parseFloat(document.getElementById("num").value).toFixed(2);
+                var roundToThousandths = parseFloat(document.getElementById("num").value).toFixed(3);
+
+                document.getElementById('results').value =(" The entered number is: " + floatNumber + "\n Rounded to the nearest integer: " +
+                integer+"\n Square Root rounded to an integer: " +squareRoot +"\n Rounded to the nearest tenths: "+ roundToTenths +
+                "\n Rounded to the nearest hunderdths: "+ roundToHundredths +"\n Rounded to the nearest thousandths: "+ roundToThousandths);
+                
+            }
+
+
+        }
+        </script>
+    </head>
+
+    <body>
+        <header>             
+            <div class="navbar">
+            <a class="active" href="hmw6.html" > Home - Homework 6</a>
+            <a href="hmw6-part1.html"> Part 1 </a>
+            <a href="hmw6-part2.html"> Part 2 </a>
+            <a href="hmw6-part3.html"> Part 3</a>
+             </div>
+        </header>
+         <br><h1>Homework 6 - Objects</h1>
+         <div id="content">
+            <form id="myform">
+                <label for="num"> Enter a number with at least 4 decimal positions: </label>
+                <input type="text" id="num">
+                <input type="button" value="Enter" onclick="operations()"><br>
+                <label id="error"></label><br>
+                <textarea name="results" id="results" rows="8" cols="60" readonly></textarea><br>
+                <input type="reset" value="Reset" onclick="window.location.reload()">
+            </form>
+         </div>
+    </body>
+
+
+</html>
