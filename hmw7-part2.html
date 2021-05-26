@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> CNIT 133 Homework 7 - Object Model and Event Model</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Homework 7 - Object Model and Event Model">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+
+        <style>
+         body{
+                margin: 0;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin: 20px 100px;
+            }
+         h2{
+            color: rgb(59, 57, 57);
+            margin: 20px 100px;
+        }
+
+        nav {
+            background-color:#fcc6d0b9; 
+            float:left;
+            margin-left: 20px;
+            }
+        nav ul {
+            text-align:center;
+            }
+        nav ul li {
+            float:left; 
+            display:inline;
+            }
+       
+        nav ul li a {
+            display:block; 
+            padding:15px 25px; 
+            color:rgb(59, 57, 57);
+            text-decoration:none; 
+            }
+        nav ul li ul {
+            position:absolute;
+             width:90px;
+              background: #94BDDB;
+              }
+        nav ul li ul li {
+            width:90px;
+            }
+        nav ul li ul li a {
+            display:block; 
+            padding:15px 10px; 
+            color:#FFF;
+            }
+        nav ul li ul li:hover a {
+             color:#fa899ee0
+             }
+        nav ul li ul.display{
+            display:none;
+            }
+        nav ul li:hover ul.display {
+            display:block;
+            }
+
+     
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('nav li ul').hide().removeClass('display');
+                $('nav li').hover(
+                function () {
+                    $('ul', this).stop().slideDown(200);
+                },
+                function () {
+                    $('ul', this).stop().slideUp(200);
+                }
+                );
+                });
+    
+        </script>
+    </head>
+
+    <body>
+        <h2>CNIT 133 Homeworks</h2>
+        <nav class="navbar">
+            <ul>
+                <li><a href="homework1.html">Homework 1</a></li>
+                <li><a href="hmw2.html">Homework 2</a>
+                    <ul class="display">
+                        <li><a href="hmw2-part1.html"> Part 1</a></li>
+                        <li><a href="hmw2-part2.html"> Part 2</a></li>
+                        <li><a href="hmw2-part3.html"> Part 3</a></li>
+                        <li><a href="hmw2-credit.html"> Extra C.</a></li>
+                    </ul>
+                </li>
+                <li><a href="hmw3-functions.html">Homework 3</a>
+                    <ul class="display">
+                        <li><a href="hmw3-functions.html"> Part 1</a></li>
+                        <li><a href="hmw3-part2.html"> Part 2</a></li>
+                        <li><a href="hmw3-part3.html"> Part 3</a></li>
+                        <li><a href="hmw3-part4.html"> Part 4</a></li>
+                    </ul>
+                </li>
+                <li><a href="hmw4.html">Homework 4</a>
+                    <ul class="display">
+                        <li><a href="hmw4-part1.html"> Part 1</a></li>
+                        <li><a href="hmw4-part2.html"> Part 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="Hmw5.html">Homework 5</a>
+                    <ul class="display">
+                        <li><a href="Hmw5-part1.html"> Part 1</a></li>
+                        <li><a href="Hmw5-part2.html"> Part 2</a></li>
+                        <li><a href="Hmw5-part3.html"> Part 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="hmw6.html">Homework 6</a>
+                    <ul class="display">
+                        <li><a href="hmw6-part1.html"> Part 1</a></li>
+                        <li><a href="hmw6-part2.html"> Part 2</a></li>
+                        <li><a href="hmw6-part3.html"> Part 3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </body>
+  
+
+</html>

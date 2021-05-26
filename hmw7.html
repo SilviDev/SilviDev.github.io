@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> CNIT 133 Homework 7 - Object Model and Event Model</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Homework 7 - Object Model and Event Model">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+
+        <style>
+            *{box-sizing: border-box;}
+
+            body{
+                margin: 0;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin: 20px 100px;
+            }
+            h1{
+            color: rgb(59, 57, 57);
+        }
+        h2{
+            cursor: pointer;
+        }
+            .content{
+
+                text-align: justify;
+                color: white;
+                background-color: #6f7fe4cc;
+                padding: 16px 16px;;
+                border-radius: 12px;
+                width: 80%;
+                
+            }
+            a{
+                color: white;
+            }
+            a:hover{
+                color: #2F375E;
+            }
+
+            
+
+
+           
+        </style>
+        <script src="https://code.jquery.com/jquery-1.7.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.more').hide();
+                $('.content h2').toggle(
+                    function(){
+                        $(this).next('.more').slideDown();
+                        $(this).addClass('close');
+                    },
+                    function(){
+                        $(this).next('.more').fadeOut();
+                        $(this).removeClass('close');
+                    }
+                );
+            });
+        </script>
+    </head>
+
+    <body>
+        <h1>CNIT 133 Homework 7 - Object Model and Event Model</h1>
+        <div class="content">
+            <h2 ><a href="assigments.html"> Home - Assigments</a>  </h2>
+            <h2> Part 1 + </h2>
+            <div class="more">
+                <p>Webpage that allows users to select a page layout and formatting. 
+                    <a href="hmw7-part1.html">Click here to check!</a>
+                </p>
+            </div>
+            <h2> Part 2 + </h2>
+            <div class="more">
+                <p>Script that displays a top navigation bar with links to all my ptojects.
+                    <a href="hmw7-part2.html">Click here to check!</a>
+                </p>
+            </div>
+        </div>
+    </body>
+
+
+</html>

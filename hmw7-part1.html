@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <title> CNIT 133 Homework 7 - Object Model and Event Model</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Homework 7 - Object Model and Event Model">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+    
+<style>
+          body{
+                margin: 0;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin: 20px 100px;
+            }
+
+       #myForm {
+            float: left;
+            margin-left: 30px;
+        }
+
+
+        h1{
+            color: rgb(59, 57, 57);
+            margin: 10px 0;
+        }
+        #content{
+            margin-top: 20px;
+            text-align: justify;
+            color: white;
+            background-color: #6f7fe4cc;
+            padding: 40px 40px;;
+            border-radius: 12px;
+            width: 50%;
+
+            }
+            button{
+                padding: 4px;
+                margin-left: 60px;
+                border: 0;
+                border-radius: 5px;
+                width: 20%;
+                box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.253);
+            }
+
+
+
+</style>
+
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script>
+   
+        $(function () { 
+            $("#myTable :radio").click(function () {
+                $("#content").css($(this).attr("name"), $(this).val());
+            });
+
+            
+            $("#fontSize").change(function () {
+                $("#content").css($(this).attr("name"), $(this).val());
+            });
+
+       
+            $("#myTable :checkbox").change(function () {
+                $("#content").css($(this).attr("name"), this.checked ? $(this).val() : "");
+            });
+
+
+            $("#resetAll").click(function () {
+                $("#attributeTable [checked]").click(); 
+                $("#fontSize").val(""); 
+                $("#attributeTable :checked").click(); 
+            });
+        });
+</script>
+</head>
+
+<body>
+    <h1>CNIT 133 Homework 7 - Object Model and Event Model</h1>
+    <h3>Select your prefered layout and formatting</h3>
+
+<form id="myForm">
+ 
+    <table id="myTable" >
+        <tr>
+            <th>Background Color </th>
+            <th>Font Family</th>
+            <th>Font Size</th>
+            <th>Font Style</th>
+        </tr>
+        <tr>
+            <td>
+                <label><input type="radio" name="font-family" value='"Comic Sans MS", cursive, sans-serif'
+                              id="comicSans">Comic Sans MS</label><br>
+                <label><input type="radio" name="font-family" value="Tahoma, Geneva, sans-serif"
+                              id="tahoma">Tahoma</label><br>
+                <label><input type="radio" name="font-family" value='"Trebuchet MS", Helvetica, sans-serif'
+                              id="trebuchet">Trebuchet MS</label><br>
+                <label><input type="radio" name="font-family" value=""
+                              id="fontDefault" checked>Default</label>
+            </td>
+            <td>
+                <label><input type="radio" name="background-color" value="#FF7941"
+                              id="azure">Orange</label><br>
+                <label><input type="radio" name="background-color" value="#FC4C22"
+                              id="honeydew">Red</label><br>
+                <label><input type="radio" name="background-color" value="#FCC6D0"
+                              id="ivory">Pink</label><br>
+                <label><input type="radio" name="background-color" value="#94BDDB"
+                              id="lavender">Blue</label><br>
+                <label><input type="radio" name="background-color" value=""
+                              id="colorDefault" checked>Default</label>
+            </td>
+            <td>
+                <label for="fontSize">Select one:</label><br>
+                <select name="font-size" size="5" id="fontSize">
+                    <option value="80%">80%</option>
+                    <option value="100%">110%</option>
+                    <option value="110%">150%</option>
+                    <option value="" selected>Default</option>
+                </select>
+            </td>
+            <td>
+                <label><input type="checkbox" name="font-weight" value="bold" id="boldCheck">bold</label><br>
+                <label><input type="checkbox" name="font-style" value="italic" id="italicCheck">italic</label><br>
+            </td>
+        </tr>
+       
+    </table>
+    <br><button type="button" id="resetAll"> Reset</button>
+</form>
+
+<br style="clear: both">
+
+<div id="content">
+    <h2>No Man is an Island</h2>
+    <p>No man is an island entire of itself; every man 
+        is a piece of the continent, a part of the main; 
+        if a clod be washed away by the sea, Europe 
+        is the less, as well as if a promontory were, as 
+        well as any manner of thy friends or of thine 
+        own were; any man's death diminishes me, 
+        because I am involved in mankind. 
+        And therefore never send to know for whom 
+        the bell tolls; it tolls for thee.</p>
+        <p>John Donne </p>
+ 
+</div>
+</body>
+</html>
